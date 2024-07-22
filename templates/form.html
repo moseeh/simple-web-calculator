@@ -2,15 +2,16 @@
 <html>
 <head>
     <title>Arithmetic Operations</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
     <h1>Arithmetic Operations</h1>
     <form method="POST" action="/calculate">
         <label for="num1">Number 1:</label>
-        <input type="text" id="num1" name="num1"><br><br>
+        <input type="text" id="num1" name="num1">
         
         <label for="num2">Number 2:</label>
-        <input type="text" id="num2" name="num2"><br><br>
+        <input type="text" id="num2" name="num2">
         
         <label for="operation">Operation:</label>
         <select id="operation" name="operation">
@@ -19,7 +20,7 @@
             <option value="mul">Multiply</option>
             <option value="div">Divide</option>
             <option value="mod">Modulus</option>
-        </select><br><br>
+        </select>
         
         <input type="submit" value="Calculate">
     </form>

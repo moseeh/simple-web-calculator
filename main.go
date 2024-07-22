@@ -7,9 +7,12 @@ import (
 )
 
 func main() {
+	fs := http.FileServer(http.Dir("./styles"))
+	http.Handle("/styles/", http.StripPrefix("/styles/", fs))
+
 	http.HandleFunc("/", utilities.FormHandler)
 	http.HandleFunc("/calculate", utilities.CalculateHandler)
 
-	fmt.Println("Server started at :8080")
-	http.ListenAndServe(":8080", nil)
+	fmt.Println("Server started at :8000")
+	http.ListenAndServe(":8000", nil)
 }
