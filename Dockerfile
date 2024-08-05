@@ -1,13 +1,16 @@
 # Use the official Golang image as the base image
-FROM golang:1.20-alpine
+FROM golang:1.21-alpine
+
+# Install bash
+RUN apk add --no-cache bash
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy go.mod file to the workspace
+# Copy go.mod file
 COPY go.mod ./
 
-# Download all dependencies. Dependencies will be cached if the go.mod file is not changed
+# Download all dependencies
 RUN go mod download
 
 # Copy the source code to the workspace
